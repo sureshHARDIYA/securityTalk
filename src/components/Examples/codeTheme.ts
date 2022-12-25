@@ -1,4 +1,4 @@
-export default {
+const codeTheme = {
     "code[class*=\"language-\"]": {
         "color": "#ccc",
         "background": "none",
@@ -151,3 +151,5 @@ export default {
         "color": "green"
     }
 }
+
+export default codeTheme;

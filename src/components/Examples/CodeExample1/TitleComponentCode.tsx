@@ -1,12 +1,16 @@
-import { Box,CodePane } from "spectacle"
+import { Box, CodePane } from 'spectacle';
 
-import codeTheme  from "./codeTheme";
+import codeTheme from '../codeTheme';
 
 const TitleComponentCode = () => {
-    return (
-        <Box>
-            <CodePane language="tsx" theme={codeTheme as any } highlightRanges={[[18, 21], 3, [5, 7], [9, 10], 11]}>
-                {`  
+  return (
+    <Box>
+      <CodePane
+        language="tsx"
+        theme={codeTheme as any}
+        highlightRanges={[[18, 21], 3, [5, 7], [9, 10], 11]}
+      >
+        {`  
                     const [title, setTitle] = useState('green'); const ref = useRef<any>();
                 
                     const handleSave = (color?: string ) => {
@@ -15,8 +19,7 @@ const TitleComponentCode = () => {
                             setTitle(inputColor);
                             const backdrop = document.getElementById('backdrop');
                             if(backdrop && (inputColor || color )) {
-                                const updatedColor = inputColor || color; 
-                                setTitle(updatedColor);
+                                setTitle(inputColor || color);
                                 backdrop.outerHTML = \`<div id="backdrop" style="background-color: $\{updatedColor}"></div>\`;
                             }
                         }
@@ -32,9 +35,9 @@ const TitleComponentCode = () => {
                         </>
                     )
                `}
-            </CodePane>
-        </Box>
-    )
-}
+      </CodePane>
+    </Box>
+  );
+};
 
-export  default  TitleComponentCode
+export default TitleComponentCode;
