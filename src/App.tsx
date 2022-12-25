@@ -1,35 +1,32 @@
 import {
   FlexBox,
   Heading,
-  SpectacleLogo,
   UnorderedList,
   CodeSpan,
-  OrderedList,
   ListItem,
   FullScreen,
   AnimatedProgress,
-  Appear,
   Slide,
   Deck,
-  Text,
-  Grid,
   Box,
   Image,
   CodePane,
-  MarkdownSlide,
-  MarkdownSlideSet,
-  Notes,
-  SlideLayout,
+  Text,
+  SlideLayout
 } from 'spectacle';
-import logo from './logo.svg';
-
 import tomorrow from 'react-syntax-highlighter/dist/cjs/styles/prism/tomorrow';
+
 import './App.css';
+import logo from './logo.svg';
 import { trygTheme } from './theme';
-import Counter from './components/Counter';
 import Title from "./slides/Title";
 import Agenda from "./slides/Agenda";
+import OWASP from "./slides/OWASP";
+import OWASP2 from "./slides/OWASP-2";
+
 import { TrygSlide } from './components/TrygSlide';
+import TitleComponent from "./components/Examples/TitleComponent";
+import TitleComponentCode from "./components/Examples/TitleComponentCode";
 
 
 const theme = {
@@ -75,34 +72,34 @@ const template = () => (
 function App() {
   return (
     <Deck template={template}   suppressBackdropFallback={true} theme={theme} >
-      {/* Title Slide */}
+      {/* Title Slide  1 */}
       <TrygSlide backgroundColor="white">
         <Title />
       </TrygSlide>
 
-      {/* Agenda Slide */}
+      {/* Agenda Slide 2 */}
       <TrygSlide title="Today's Menu">
        <Agenda  />
       </TrygSlide>
 
-      {/* Slide -1 */}
-      <TrygSlide title="OWASP Top Ten">
-        <Agenda />
+      {/* Slide -3 */}
+      <TrygSlide title="OWASP Top Ten 1/2" readMoreLink="https://owasp.org/www-project-top-ten/">
+        <OWASP />
       </TrygSlide>
-      <TrygSlide>
-      <FlexBox height="100%" flexDirection="column">
-        <Heading margin="0px" fontSize="150px">
-          ✨<i>Spectacle</i> ✨
-        </Heading>
-        <Heading margin="0px" fontSize="h2">
-          A ReactJS Presentation Library
-        </Heading>
-        <Heading margin="0px 32px" color="primary" fontSize="h3">
-          Where you can write your decks in JSX, Markdown, or MDX!
-        </Heading>
-      </FlexBox>
+
+      {/* Slide -4 */}
+      <TrygSlide title="OWASP Top Ten 2/2" readMoreLink="https://owasp.org/www-project-top-ten/">
+        <OWASP2 />
       </TrygSlide>
-      
+
+      {/* Slide -5 */}
+      <SlideLayout.Quote attribution="CSS/JSX" backgroundColor="white" attributionProps={{fontSize: '2rem', color: 'red'}} quoteProps={{fontSize: '6rem', color: 'red'}}>
+        DOM Cross-Site Scripting
+      </SlideLayout.Quote>
+
+      {/* Slide -6 */}
+      <SlideLayout.TwoColumn left={<TitleComponentCode />} right={<TitleComponent />} backgroundColor="white"></SlideLayout.TwoColumn>
+
       <TrygSlide
       transition={{
         from: {
