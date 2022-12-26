@@ -1,4 +1,4 @@
-import { Box, FlexBox, Heading, Text } from 'spectacle';
+import { FlexBox, Heading } from 'spectacle';
 import TText from '../components/Shared/TText';
 
 const IncorrectReferrerPolicy = () => {
