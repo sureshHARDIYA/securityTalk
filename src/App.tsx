@@ -22,6 +22,7 @@ import { TrygSlide } from './components/TrygSlide';
 import Solution1 from './components/Examples/CodeExample1/Solution1';
 import TitleComponent from './components/Examples/CodeExample1/TitleComponent';
 import TitleComponentCode from './components/Examples/CodeExample1/TitleComponentCode';
+import IncorrectReferrerPolicy, { IRFRight } from './slides/IncorrectReferrerPolicy';
 
 const theme = {
   fonts: {
@@ -121,10 +122,18 @@ function App() {
         <Solution1 />
       </TrygSlide>
 
+      {/* Slide -8 */}
       <SlideLayout.BigFact backgroundColor="white">
         <Heading>Prototype pollution</Heading>
         <Image src={pollution} />
       </SlideLayout.BigFact>
+
+      {/* Slide -8 */}
+      <SlideLayout.TwoColumn
+          left={<IncorrectReferrerPolicy />}
+          right={<IRFRight />}
+          backgroundColor="white"
+      ></SlideLayout.TwoColumn>
     </Deck>
   );
 }
