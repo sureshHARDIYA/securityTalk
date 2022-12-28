@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { CodePane } from 'spectacle';
 
-const keys = [];
-
 const TabbedSlider = () => {
   const [activeTab, setActiveTab] = useState('slide1');
 

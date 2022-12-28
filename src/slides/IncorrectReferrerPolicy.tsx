@@ -1,31 +1,6 @@
 import { FlexBox, Heading } from 'spectacle';
-import TinySlider from 'tiny-slider-react';
-import TabbedSlider from '../components/Shared/TabbedSlider';
 
 import TText from '../components/Shared/TText';
-
-const settings = {
-  lazyload: true,
-  nav: true,
-  mouseDrag: true,
-  loop: false,
-  items: 1,
-  gutter: 5,
-  responsive: {
-    420: {
-      items: 2,
-    },
-  },
-};
-
-const imgs = [
-  'http://d2ji2mue1p384z.cloudfront.net/img/480x360/162951.jpg',
-  'http://d2ji2mue1p384z.cloudfront.net/img/480x360/162465.jpg',
-  'http://d2ji2mue1p384z.cloudfront.net/img/480x360/220048.jpg',
-  'http://d2ji2mue1p384z.cloudfront.net/img/480x360/220048.jpg',
-  'http://d2ji2mue1p384z.cloudfront.net/img/480x360/220048.jpg',
-  'http://d2ji2mue1p384z.cloudfront.net/img/480x360/220048.jpg',
-];
 
 const IncorrectReferrerPolicy = () => {
   return (
@@ -42,7 +17,6 @@ const IncorrectReferrerPolicy = () => {
         specified, the target is passed some information
         about the originating webpage.{' '}
       </TText>
-      <TabbedSlider />
     </FlexBox>
   );
 };
