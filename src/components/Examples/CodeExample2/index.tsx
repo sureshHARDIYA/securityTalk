@@ -15,7 +15,7 @@ const AwesomeSearchPage = () => {
   };
 
   return (
-    <form className="p-6 pt-10">
+    <form className="p-6 pt-10" autoComplete="off">
       <Heading fontSize="20px">
         Use DOM-based cross-site scripting to exploit this
         form.
