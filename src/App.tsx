@@ -27,6 +27,8 @@ import IncorrectReferrerPolicy, {
 } from './slides/IncorrectReferrerPolicy';
 import 'tiny-slider/dist/tiny-slider.css';
 import TabbedSlider from './components/Shared/TabbedSlider';
+import AwesomeSearchPage from './components/Examples/CodeExample2';
+import CodeBlock from './components/Examples/CodeExample2/CodeBlock';
 
 const theme = {
   fonts: {
@@ -126,6 +128,13 @@ function App() {
         <Solution1 />
       </TrygSlide>
 
+      {/* Slide -6 */}
+      <SlideLayout.TwoColumn
+        left={<CodeBlock />}
+        right={<AwesomeSearchPage />}
+        backgroundColor="white"
+      ></SlideLayout.TwoColumn>
+
       {/* Slide -8 */}
       <SlideLayout.BigFact backgroundColor="white">
         <Heading>Prototype pollution</Heading>
@@ -141,6 +150,10 @@ function App() {
 
       <TrygSlide title="Incorrect Referrer Policy">
         <TabbedSlider />
+      </TrygSlide>
+
+      <TrygSlide title="Incorrect Referrer Policy">
+        <AwesomeSearchPage />
       </TrygSlide>
     </Deck>
   );

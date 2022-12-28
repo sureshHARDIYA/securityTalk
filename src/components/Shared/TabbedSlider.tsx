@@ -89,9 +89,29 @@ const TabbedSlider = () => {
               </p>
               <CodePane language="tsx">
                 {`
-                    <TrygSlide title="Today's Menu">
-                    <Agenda />
-                    </TrygSlide>
+                async function logQuery(url, params) {
+                    try {
+                        await fetch(url, {method: "post", keepalive: true, body: JSON.stringify(params)});
+                    } catch(e) {
+                        console.error("Failed storing query");
+                    }
+                }
+
+                async function searchLogger() {
+                    let config = {params: deparam(new URL(location).searchParams.toString())};
+
+                    if(config.transport_url) {
+                        let script = document.createElement('script');
+                        script.src = config.transport_url;
+                        document.body.appendChild(script);
+                    }
+
+                    if(config.params && config.params.search) {
+                        await logQuery('/logger', config.params);
+                    }
+                }
+
+                window.addEventListener("load", searchLogger);
                  `}
               </CodePane>
             </TabsContentItem>
@@ -252,8 +272,8 @@ const StyledCheck = () => {
   return (
     <svg
       className="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <circle cx="12" cy="12" r="11" />
       <path
