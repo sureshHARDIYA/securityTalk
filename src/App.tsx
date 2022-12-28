@@ -22,7 +22,11 @@ import { TrygSlide } from './components/TrygSlide';
 import Solution1 from './components/Examples/CodeExample1/Solution1';
 import TitleComponent from './components/Examples/CodeExample1/TitleComponent';
 import TitleComponentCode from './components/Examples/CodeExample1/TitleComponentCode';
-import IncorrectReferrerPolicy, { IRFRight } from './slides/IncorrectReferrerPolicy';
+import IncorrectReferrerPolicy, {
+  IRFRight,
+} from './slides/IncorrectReferrerPolicy';
+import 'tiny-slider/dist/tiny-slider.css';
+import TabbedSlider from './components/Shared/TabbedSlider';
 
 const theme = {
   fonts: {
@@ -130,10 +134,14 @@ function App() {
 
       {/* Slide -8 */}
       <SlideLayout.TwoColumn
-          left={<IncorrectReferrerPolicy />}
-          right={<IRFRight />}
-          backgroundColor="white"
+        left={<IncorrectReferrerPolicy />}
+        right={<IRFRight />}
+        backgroundColor="white"
       ></SlideLayout.TwoColumn>
+
+      <TrygSlide title="Incorrect Referrer Policy">
+        <TabbedSlider />
+      </TrygSlide>
     </Deck>
   );
 }
